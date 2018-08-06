@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "788816392348",
+    "firebase_url": "https://my-memories-28b4d.firebaseio.com",
+    "project_id": "my-memories-28b4d",
+    "storage_bucket": "my-memories-28b4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788816392348:android:0f2416f2d73a1ed9",
+        "android_client_info": {
+          "package_name": "com.example.manso.mymemories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788816392348-ulk3ntfk0lve14k8h60ij40o5o9d7pm5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.manso.mymemories",
+            "certificate_hash": "88e6493af460d43ce794c7f113a9fa5b16c7e260"
+          }
+        },
+        {
+          "client_id": "788816392348-gdt4mo1bkg9f10nqinlri8ekqngang2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPUu5c-gYLtyeuCsT5wdOAEiBn69iUkKg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788816392348-gdt4mo1bkg9f10nqinlri8ekqngang2v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
