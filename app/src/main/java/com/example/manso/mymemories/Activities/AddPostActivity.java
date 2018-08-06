@@ -2,6 +2,7 @@ package com.example.manso.mymemories.Activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -29,6 +30,8 @@ public class AddPostActivity extends AppCompatActivity {
     private FirebaseUser mUser;
     private DatabaseReference mPostDatabase;
     private ProgressDialog mProgress;
+    private Uri mImageUri;
+    private static final int GALLARY_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +53,10 @@ public class AddPostActivity extends AppCompatActivity {
         mPostImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gallaryIntent = new Intent (Intent.ACTION_GET_CONTENT);
-                gallaryIntent.setType("image/*");
+                Intent galleryIntent = new Intent (Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent, GALLARY_CODE);
+
             }
         });
 
@@ -63,6 +68,18 @@ public class AddPostActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if((requestCode == GALLARY_CODE) && (resultCode == RESULT_OK)){
+
+            mImageUri = data.getData();
+            mPostImage.setImageURI(mImageUri);
+
+        }
     }
 
     private void startPosting() {
