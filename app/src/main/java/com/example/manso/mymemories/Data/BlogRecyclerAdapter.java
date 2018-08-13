@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.manso.mymemories.Model.Blog;
 import com.example.manso.mymemories.R;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -45,7 +46,7 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
         String imageURL = null;
 
         holder.title.setText(blog.getTitle());
-        holder.description.setText(blog.getDesc());
+        holder.desc.setText(blog.getDesc());
 
         java.text.DateFormat dateFormat = java.text.DateFormat.getDateInstance();
         String formattedDate = dateFormat.format(new Date(Long.valueOf(blog.getTimestamp())).getTime());
@@ -54,6 +55,7 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
         imageURL = blog.getImage();
 
         //TODO: Use picasso library to load image
+        Picasso.with(context).load(imageURL).into(holder.image);
 
 
     }
@@ -66,17 +68,17 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView title;
-        public TextView description;
+        public TextView desc;
         public TextView timestamp;
         public ImageView image;
-        String userid;
+        public String userid;
 
         public ViewHolder(View view, Context ctx) {
             super(view);
             context = ctx;
 
             title = (TextView) view.findViewById(R.id.postTitleList);
-            description = (TextView) view.findViewById(R.id.postTextList);
+            desc = (TextView) view.findViewById(R.id.postTextList);
             image = (ImageView) view.findViewById(R.id.postImageList);
             timestamp = (TextView) view.findViewById(R.id.timestampList);
 
